@@ -143,13 +143,13 @@ void Go(float Speed) //更新电机输出，包括转弯值和速度值
     
     if( (Speed+Turning_Out_R)>=0 && (Speed+Turning_Out_R)<=990)
     {
-        FTM_PWM_Duty(FTM0, FTM_CH0, (uint32)(Speed+Turning_Out_R) );//r
-        FTM_PWM_Duty(FTM0, FTM_CH1, 0);
+        FTM_PWM_Duty(FTM0, MOTOR1_PWM, (uint32)(Speed+Turning_Out_R) );//r
+        FTM_PWM_Duty(FTM0, MOTOR2_PWM, 0);
         //gpio_set   (PTC0,   0); 
     }else if((Speed+Turning_Out_R) < 0 && (Speed+Turning_Out_R) > (0-990))
     {
-        FTM_PWM_Duty(FTM0, FTM_CH0, 0);
-        FTM_PWM_Duty(FTM0, FTM_CH1, (uint32)(0-Speed));
+        FTM_PWM_Duty(FTM0, MOTOR1_PWM, 0);
+        FTM_PWM_Duty(FTM0, MOTOR2_PWM, (uint32)(0-Speed));
         //gpio_set   (PTC0,   0); 
     }
     else
@@ -157,39 +157,39 @@ void Go(float Speed) //更新电机输出，包括转弯值和速度值
       
       if( Speed+Turning_Out_R>=990)
       {
-        FTM_PWM_Duty(FTM0, FTM_CH0,990);//r
-        FTM_PWM_Duty(FTM0, FTM_CH1, 0);
+        FTM_PWM_Duty(FTM0, MOTOR1_PWM,990);//r
+        FTM_PWM_Duty(FTM0, MOTOR2_PWM, 0);
       }
       if( Speed+Turning_Out_R<=-990)
       {
-        FTM_PWM_Duty(FTM0, FTM_CH0,0);//r
-        FTM_PWM_Duty(FTM0, FTM_CH1, 990);
+        FTM_PWM_Duty(FTM0, MOTOR1_PWM,0);//r
+        FTM_PWM_Duty(FTM0, MOTOR2_PWM, 990);
       }
     }
     
     if( (Speed-Turning_Out_L)>=0 && (Speed-Turning_Out_L)<=990)
     {
-        FTM_PWM_Duty(FTM0, FTM_CH3, (uint32)(Speed-Turning_Out_L) );//让它减速
-        FTM_PWM_Duty(FTM0, FTM_CH2, 0);
+        FTM_PWM_Duty(FTM0, MOTOR3_PWM, (uint32)(Speed-Turning_Out_L) );//让它减速
+        FTM_PWM_Duty(FTM0, MOTOR4_PWM, 0);
         //gpio_set   (PTC0,   0); 
     }
     else if((Speed-Turning_Out_L) < 0 && (Speed-Turning_Out_L) > (0-990))
     {
-        FTM_PWM_Duty(FTM0, FTM_CH3, 0);
-        FTM_PWM_Duty(FTM0, FTM_CH2, (uint32)(0-Speed));
+        FTM_PWM_Duty(FTM0, MOTOR3_PWM, 0);
+        FTM_PWM_Duty(FTM0, MOTOR4_PWM, (uint32)(0-Speed));
         //gpio_set   (PTC0,   0); 
     }
     else
     {
       if( Speed-Turning_Out_L>=990 )
       {
-        FTM_PWM_Duty(FTM0, FTM_CH3,990);//r
-        FTM_PWM_Duty(FTM0, FTM_CH2, 0);
+        FTM_PWM_Duty(FTM0, MOTOR3_PWM,990);//r
+        FTM_PWM_Duty(FTM0, MOTOR4_PWM, 0);
       }
       if( Speed-Turning_Out_L<=-990 )
       {
-        FTM_PWM_Duty(FTM0, FTM_CH3,0);//r
-        FTM_PWM_Duty(FTM0, FTM_CH2, 990);
+        FTM_PWM_Duty(FTM0, MOTOR3_PWM,0);//r
+        FTM_PWM_Duty(FTM0, MOTOR4_PWM, 990);
       }
       //gpio_set   (PTC0,   1); 
     }
@@ -197,10 +197,10 @@ void Go(float Speed) //更新电机输出，包括转弯值和速度值
   }
   else 
   {
-    FTM_PWM_Duty(FTM0, FTM_CH0, 0);
-    FTM_PWM_Duty(FTM0, FTM_CH1, 0);
-    FTM_PWM_Duty(FTM0, FTM_CH2, 0);
-    FTM_PWM_Duty(FTM0, FTM_CH3, 0);
+    FTM_PWM_Duty(FTM0, MOTOR1_PWM, 0);
+    FTM_PWM_Duty(FTM0, MOTOR2_PWM, 0);
+    FTM_PWM_Duty(FTM0, MOTOR4_PWM, 0);
+    FTM_PWM_Duty(FTM0, MOTOR3_PWM, 0);
   }
     
 }
