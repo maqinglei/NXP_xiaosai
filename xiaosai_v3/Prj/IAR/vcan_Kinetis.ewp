@@ -3807,16 +3807,19 @@
   <group>
     <name>App</name>
     <file>
-      <name>$PROJ_DIR$\..\..\App\calculation.c</name>
+      <name>$PROJ_DIR$\..\..\App\About_Image.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\App\calculation.h</name>
+      <name>$PROJ_DIR$\..\..\App\About_Image.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\App\ccdwork.c</name>
+      <name>$PROJ_DIR$\..\..\App\define.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\App\IIC.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\App\isr.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\App\main.c</name>
@@ -3834,10 +3837,13 @@
       <name>$PROJ_DIR$\..\..\App\Inc\MK60_it.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\App\oled.c</name>
+      <name>$PROJ_DIR$\..\..\App\Inc\PORT_cfg.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\App\Inc\PORT_cfg.h</name>
+      <name>$PROJ_DIR$\..\..\App\Process.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\App\Process.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\App\upper monitor.c</name>
@@ -3846,10 +3852,28 @@
   <group>
     <name>Board</name>
     <file>
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_camera.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Board\inc\VCAN_camera.h</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_key.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\Board\src\VCAN_LED.C</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_OV7725_Eagle.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Board\inc\VCAN_OV7725_Eagle.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Board\inc\VCAN_OV7725_REG.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Board\src\VCAN_SCCB.c</name>
     </file>
   </group>
   <group>
@@ -3862,6 +3886,12 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_adc.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_dma.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Chip\inc\MK60_dma.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_DWT.c</name>
